@@ -8,7 +8,7 @@ DSTF-Bench is designed to diagnose not only whether forecasting performance chan
 - **Second-order intra-series shifts**: changes in variance, volatility, or local fluctuation scale.
 - **Inter-series dependency shifts**: changes in cross-variable covariance and dependency structure.
 
-The benchmark includes 15 public real-world datasets, unified offline and online evaluation protocols, representative forecasting backbones, shift-resilient frameworks, online adaptation methods, and controlled shift pressure tests.
+The benchmark includes 15 public real-world datasets, unified offline and online evaluation protocols, representative forecasting backbones and online adaptation methods.
 
 ## News
 
@@ -112,16 +112,6 @@ The offline protocol measures robustness of a fixed trained model under future n
 | Decomposition, mixing, and non-stationarity-aware | `Leddam`, `duet`, `TimeBridge`, `TimeMixer`, `TimesNet` |
 | State space | `S_Mamba` |
 
-### Online Adaptation
-
-| Method | Argument |
-| --- | --- |
-| Base online update | omit `--online_method` |
-| SOLID | `--online_method SOLID` |
-| PROCEED | `--online_method Proceed` |
-| AdaptZ delayed-feedback ablation | `--online_method AdaptZ` |
-
-The `AdaptZ` class in this repository implements a causal delayed-feedback ablation path in the unified online pipeline. It does not vendor the official ADAPT-Z z-adapter and feature-gradient predictor modules.
 
 ## Usage
 
