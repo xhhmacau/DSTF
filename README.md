@@ -165,81 +165,7 @@ CUDA_VISIBLE_DEVICES=0 python -u run.py \
   --gpu 0
 ```
 
-### PROCEED
 
-```bash
-CUDA_VISIBLE_DEVICES=0 python -u run.py \
-  --learning_environment online \
-  --model NLinear \
-  --dataset stock \
-  --online_method Proceed \
-  --online_learning_rate 0.0001 \
-  --seq_len 96 \
-  --label_len 48 \
-  --pred_len 24 \
-  --batch_size 32 \
-  --gpu 0
-```
-
-### SOLID
-
-```bash
-CUDA_VISIBLE_DEVICES=0 python -u run.py \
-  --learning_environment online \
-  --model NLinear \
-  --dataset stock \
-  --online_method SOLID \
-  --online_learning_rate 0.0001 \
-  --whole_model \
-  --test_train_num 20 \
-  --selected_data_num 5 \
-  --seq_len 96 \
-  --label_len 48 \
-  --pred_len 24 \
-  --batch_size 32 \
-  --gpu 0
-```
-
-## Reproducibility
-
-To reproduce the main benchmark, run all backbones over the offline and online horizons used in the paper.
-
-Offline example:
-
-```bash
-for model in OLinear DLinear NLinear Informer Autoformer PatchTST Crossformer DeformableTST TCN SCINet MICN Leddam duet TimeBridge TimeMixer TimesNet S_Mamba; do
-  for pred_len in 96 192 336 720; do
-    CUDA_VISIBLE_DEVICES=0 python -u run.py \
-      --learning_environment offline \
-      --model "$model" \
-      --dataset stock \
-      --features M \
-      --seq_len 96 \
-      --label_len 48 \
-      --pred_len "$pred_len" \
-      --itr 3 \
-      --gpu 0
-  done
-done
-```
-
-Online example:
-
-```bash
-for pred_len in 24 48 96; do
-  CUDA_VISIBLE_DEVICES=0 python -u run.py \
-    --learning_environment online \
-    --model NLinear \
-    --dataset stock \
-    --features M \
-    --seq_len 96 \
-    --label_len 48 \
-    --pred_len "$pred_len" \
-    --itr 3 \
-    --online_learning_rate 0.0001 \
-    --gpu 0
-done
-```
 
 ## Important Arguments
 
@@ -269,7 +195,6 @@ checkpoints/   # saved model checkpoints
 results/       # CSV metric summaries
 ```
 
-Both directories are ignored by git.
 
 ## Repository Structure
 
@@ -290,30 +215,6 @@ DSTF-Bench/
 |-- adapter/
 `-- utils/
 ```
-
-## Verification
-
-The release code was smoke-tested on Stock with GPU execution. The following code paths were checked:
-
-- Offline: `OLinear`, `DLinear`, `NLinear`, `Informer`, `Autoformer`, `PatchTST`, `Crossformer`, `DeformableTST`, `TCN`, `SCINet`, `MICN`, `Leddam`, `duet`, `TimeBridge`, `TimeMixer`, `TimesNet`, `S_Mamba`.
-- Online: base `Exp_Online`, `SOLID`, `Proceed`, and `AdaptZ`.
-
-Smoke tests use short one-epoch runs to verify executability. Full benchmark numbers require the paper-scale settings and repeated seeds.
-
-## Citation
-
-If you find this repository useful, please cite:
-
-```bibtex
-@inproceedings{xu2026dstfbench,
-  title     = {DSTF-Bench: A Shift-Aware Benchmark for Time Series Forecasting in Non-Stationary Environments},
-  author    = {Xu, Haihua},
-  booktitle = {Proceedings of the ACM Conference},
-  year      = {2026}
-}
-```
-
-Please update the venue, DOI, and bibliographic metadata after publication.
 
 ## Acknowledgement
 
