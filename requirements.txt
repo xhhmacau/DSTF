@@ -1,0 +1,54 @@
+# Core dependencies
+
+numpy==1.23.5
+pandas==1.5.3
+matplotlib==3.7.0
+scipy==1.10.1
+scikit-learn==1.2.2
+tqdm==4.64.1
+
+# Deep learning and transformers
+transformers==4.48.0
+einops==0.8.0
+accelerate==1.2.1
+diffusers==0.32.2
+safetensors==0.5.2
+tokenizers==0.21.0
+timm==0.6.12
+
+# Specialized packages
+reformer-pytorch==1.4.4
+torchmetrics==0.6.0
+lightning-utilities==0.11.9
+
+# Data processing
+h5py
+PyYAML
+joblib
+
+# Utilities
+fsspec
+filelock
+huggingface-hub
+packaging
+pillow
+regex
+requests
+urllib3
+certifi
+charset-normalizer
+click
+future
+jinja2
+MarkupSafe
+psutil
+pywavelets
+sympy
+tomli
+typing-extensions
+zipp
+
+# Development and testing
+rouge==1.0.0
+nltk
+opencv-python==4.11.0.86
