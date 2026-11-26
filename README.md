@@ -214,7 +214,13 @@ If you use DSTF-Bench, its code, or its datasets in your research, please cite o
 
 ```bibtex
 @inproceedings{xu2027dstfbench,
-  author    = {Xu, Haihua and Zhao, Jianpeng and Zhang, He and Luo, Haoyuan and Peng, Ziyue and Cheng, Qian and Wang, Pengyang},
+  author    = {Haihua Xu and
+               Jianpeng Zhao and
+               He Zhang and
+               Haoyuan Luo and
+               Ziyue Peng and
+               Qian Cheng and
+               Pengyang Wang},
   title     = {{DSTF-Bench}: A Shift-Aware Benchmark for Time Series Forecasting in Non-Stationary Environments},
   booktitle = {Proceedings of the 33rd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.1},
   year      = {2027},
