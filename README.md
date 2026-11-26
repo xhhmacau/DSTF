@@ -208,6 +208,25 @@ DSTF-Bench/
 `-- utils/
 ```
 
+## Citation
+
+If you use DSTF-Bench, its code, or its datasets in your research, please cite our paper.
+
+```bibtex
+@inproceedings{xu2027dstfbench,
+  author    = {Xu, Haihua and Zhao, Jianpeng and Zhang, He and Luo, Haoyuan and Peng, Ziyue and Cheng, Qian and Wang, Pengyang},
+  title     = {{DSTF-Bench}: A Shift-Aware Benchmark for Time Series Forecasting in Non-Stationary Environments},
+  booktitle = {Proceedings of the 33rd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.1},
+  year      = {2027},
+  publisher = {Association for Computing Machinery},
+  address   = {New York, NY, USA},
+  location  = {San Jose, CA, USA},
+  series    = {KDD '27},
+  doi       = {10.1145/3862868.3871590},
+  url       = {https://doi.org/10.1145/3862868.3871590}
+}
+```
+
 ## Acknowledgement
 
 This repository builds on the open-source time series forecasting ecosystem. We thank the authors of the forecasting models and benchmark repositories that made reproducible TSF research possible.
