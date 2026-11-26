@@ -12,8 +12,14 @@ The benchmark includes 15 public real-world datasets, unified offline and online
 
 ## News
 
+- **2026-11**: DSTF-Bench was accepted to the **Datasets and Benchmarks Track at ACM KDD 2027**.
 - **2026-06**: Initial public release of the DSTF-Bench codebase.
-- Datasets are distributed separately at: https://github.com/xhhmacau/Datasets
+
+## Code and data reuse
+
+You may use, modify, and redistribute the original DSTF-Bench code and documentation under the [MIT License](LICENSE), including for commercial use. The [third-party notices](THIRD_PARTY_NOTICES.md) identify upstream components and their applicable terms.
+
+The [benchmark datasets](https://github.com/xhhmacau/Datasets) are available for download and use under the applicable dataset-source terms. The [Electricity dataset record on Zenodo](https://zenodo.org/records/21016755) specifies [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). See the dataset repository for download and citation information.
 
 ## Requirements
 
@@ -35,11 +41,7 @@ If multiple GPUs are exposed, `--gpu` indexes the visible devices. For example, 
 
 ## Data
 
-DSTF-Bench datasets are released separately to keep this repository lightweight:
-
-```text
-https://github.com/xhhmacau/Datasets
-```
+DSTF-Bench datasets are distributed separately through the [dataset repository](https://github.com/xhhmacau/Datasets).
 
 Download the required files and place them under `./dataset/`. The default loader uses relative paths and expects dataset files to match the names configured in `settings.py`.
 
